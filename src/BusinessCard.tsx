@@ -18,59 +18,6 @@ const media = [
   { type: "video", src: "/The science of the possible. (1) copy.mp4" }
 ];
 
-
-const BusinessCard = () => {
-  const [current, setCurrent] = useState(0);
-  const nextPhoto = () => setCurrent((prev) => (prev + 1) % media.length);
-  const prevPhoto = () => setCurrent((prev) => (prev - 1 + media.length) % media.length);
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-synapse-light via-synapse to-synapse-dark px-4">
-      <motion.div
-        className="w-full max-w-md"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.6 }}
-        variants={cardVariants}
-      >
-        <Tilt
-          tiltMaxAngleX={10}
-          tiltMaxAngleY={10}
-          perspective={1000}
-          scale={1.02}
-          transitionSpeed={1000}
-          className="rounded-3xl shadow-2xl"
-        >
-          <div className="bg-white/70 backdrop-blur-lg border border-white/30 rounded-3xl p-8 w-full">
-            {/* Slideshow */}
-            <div className="mb-6">
-              <div className="relative w-full h-40 rounded-xl overflow-hidden flex items-center justify-center bg-gray-100">
-                {media[current].type === "image" ? (
-                  <motion.img
-                    key={current}
-                    src={media[current].src}
-                    alt={`Slideshow ${current + 1}`}
-        import React, { useState } from "react";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
-import { motion, easeOut } from "framer-motion";
-import Tilt from "react-parallax-tilt";
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: easeOut },
-  },
-};
-
-const media = [
-  
-  { type: "image", src: "/photo1.jpg" },
-  { type: "video", src: "/What is a synapse copy.mp4" },
-  { type: "video", src: "/The science of the possible. (1) copy.mp4" }
-];
-
 const BusinessCard = () => {
   const [current, setCurrent] = useState(0);
   const nextPhoto = () => setCurrent((prev) => (prev + 1) % media.length);
@@ -253,4 +200,4 @@ const ContactItem = ({
   </motion.div>
 );
 
-export default BusinessCard;  
+export default BusinessCard; 
