@@ -157,7 +157,7 @@ const BusinessCard = () => {
             <div className="mt-8 flex justify-center">
               <button
                 onClick={() => {
-                  const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:Erika Goh\nTITLE:Biomedical Engineering Student\nEMAIL:erika@example.com\nTEL:+1-123-456-7890\nEND:VCARD`;
+                  const vCardData = `BEGIN:VCARD\nVERSION:3.0\nFN:Erika Goh\nTITLE:Software Engineering Student\nEMAIL:erika@example.com\nTEL:+1-123-456-7890\nEND:VCARD`;
                   const blob = new Blob([vCardData], { type: 'text/vcard' });
                   const url = URL.createObjectURL(blob);
                   window.open(url, '_blank');
